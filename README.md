@@ -100,7 +100,7 @@ https://www.figma.com/design/APr17NQmZgkqVOqWzSZZHx/AGENDA-EDU
 ![Biblioteca](RED-Red-Educacional-Digital/docs/telas-prototipo/Biblioteca.png)
 
 ### Tarefas
-![Tarefas](RED-Red-Educacional-Digital/docs/telas-prototipo/Tarefas.png)
+![Tarefas](RED-Red-Educacional-Digital/docs/telas-prototipo/tarefas.png)
 
 ### Mensagens
 ![Mensagens](RED-Red-Educacional-Digital/docs/telas-prototipo/Mensagens.png)
