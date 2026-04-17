@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Senha - RED</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-page">
+
+    <div class="background-wrapper">
+        <main class="login-card">
+            
+            <div class="logo-container">
+                <div class="logo-icon-box">
+                    <span class="r-letter">R</span>
+                </div>
+                <span class="logo-text-ed">ED</span>
+            </div>
+
+            <form id="recover-form" action="senha-enviada.html">
+                <h2>Recuperar Senha</h2>
+                
+                <p class="recover-info">Insira seu e-mail cadastrado ou nome de usuário e enviaremos um link para você.</p>
+
+                <div class="input-group">
+                    <label for="email-recover">Email ou usuário</label>
+                    <div class="input-field">
+                        <input type="text" id="email-recover" placeholder="Digite seu e-mail de cadastro" required>
+                        <span class="icon">✉️</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-entrar">Enviar link</button>
+            </form>
+            
+            <div class="back-to-login">
+                <a href="login.html">← Voltar para o Login</a>
+            </div>
+            
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

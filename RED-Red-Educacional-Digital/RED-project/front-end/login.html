@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - RED</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-page">
+
+    <div class="background-wrapper">
+        
+        <main class="login-card">
+            
+            <div class="logo-container">
+                <img src="assets/image.png" alt="Logo Rede Educacional Digital" class="logo" width="200"> 
+            </div>
+
+            <form id="login-form" action="painel.html">
+                <h2>Login</h2> <div class="input-group">
+                    <label for="email">Email ou usuário</label>
+                    <div class="input-field">
+                        <input type="text" id="email" placeholder="Digite seu email" required>
+                        <span class="icon-user">👤</span> </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="senha">Insira a senha</label>
+                    <div class="input-field">
+                        <input type="password" id="senha" placeholder="Digite sua senha" required>
+                        <span class="icon-eye">👁️</span> </div>
+                </div>
+
+                <div class="forgot-password">
+                  <a href="recuperar-senha.html">Esqueceu a senha?</a> </div>
+
+                <button type="submit" class="btn-entrar">Entrar</button>
+            </form>
+            
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
