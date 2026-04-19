@@ -1,364 +1,216 @@
-/*  Cores do site*/
+/* ── RESET ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
 :root {
-    --cor-primaria: #1A73E8; /* Azul principal */
-    --cor-primaria-hover: #1557B0; /* Azul escuro hover */
-    --cor-secundaria: #F9AB00; /* Laranja */
-    --cor-texto: #333333; /* Cinza escuro para o inputs */
-    --cor-texto-claro: #FFFFFF; /* Branco */
+  --primary:       #0C447C;
+  --primary-light: #1A6BBF;
+  --primary-bg:    #EBF2FB;
+  --accent:        #F9AB00;
+  --text:          #1a1a2e;
+  --text-muted:    #7A869A;
+  --border:        #E0E6ED;
+  --red:           #ef4444;
+  --bg-outer:      #b8cde0;
+  --radius:        16px;
+  --shadow:        0 12px 40px rgba(0,0,0,0.14);
 }
 
-/* Resete, nao mecher */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-outer);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
 }
 
-/*
-   Login e Recuperação
-*/
-.login-page {
-    background: linear-gradient(135deg, #1A73E8 0%, #0a2f63 100%);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* ── CARD WRAPPER ── */
+.auth-card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  width: 100%;
+  max-width: 860px;
+  min-height: 500px;
+  overflow: hidden;
 }
 
-.background-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
+/* ── LEFT PANEL (illustration) ── */
+.auth-left {
+  flex: 1.1;
+  background: linear-gradient(160deg, #deeaf7 0%, #c5d9ee 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 24px;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Efeito de Vidro */
-.login-card {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 24px;
-    padding: 40px;
-    width: 100%;
-    max-width: 420px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    color: var(--cor-texto-claro);
+.auth-left svg { width: 100%; max-width: 380px; height: auto; }
+
+/* ── RIGHT PANEL (form) ── */
+.auth-right {
+  flex: 1;
+  padding: 52px 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Logo Feito em Código) */
-.logo-text-container {
-    margin-bottom: 35px;
-    text-align: center;
+/* ── SKY LOGO ── */
+.sky-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 28px;
+}
+.sky-logo svg { width: 88px; height: auto; margin-bottom: 6px; }
+.sky-logo-text {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 2px;
 }
 
-.logo-icon {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    background: #FFFFFF;
-    color: var(--cor-primaria);
-    font-size: 32px;
-    font-weight: 900;
-    border-radius: 12px;
-    margin-right: 5px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+/* ── HEADINGS ── */
+.auth-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+  margin-bottom: 6px;
+}
+.auth-sub {
+  font-size: 13px;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 28px;
 }
 
-.logo-red {
-    font-size: 40px;
-    font-weight: 900;
-    color: var(--cor-texto-claro);
-    letter-spacing: -1px;
+/* ── FORM ── */
+.auth-form { width: 100%; display: flex; flex-direction: column; gap: 14px; }
+
+.input-wrap { position: relative; }
+.auth-form input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid #f5c6c6;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--text);
+  outline: none;
+  transition: border-color .25s, box-shadow .25s;
+  background: #fff;
+}
+.auth-form input::placeholder { color: #aab; }
+.auth-form input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(12,68,124,.1);
 }
 
-.logo-tagline {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: rgba(255,255,255,0.7);
-    margin-top: -5px;
+.forgot {
+  text-align: right;
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin-top: -6px;
 }
+.forgot a { color: var(--text-muted); text-decoration: none; transition: color .2s; }
+.forgot a:hover { color: var(--primary); }
 
-/* 
-   Os textos geral ai
-  */
-form h2 {
-    margin-bottom: 24px;
-    font-size: 26px;
-    font-weight: 600;
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .25s, transform .15s;
+  margin-top: 6px;
 }
+.btn-primary:hover { background: var(--primary-light); transform: translateY(-1px); }
+.btn-primary:active { transform: translateY(0); }
 
-/* Texto extra da página de recuperar senha */
+.auth-footer {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 14px;
+}
+.auth-footer a { color: var(--primary); font-weight: 600; text-decoration: none; }
+.auth-footer a:hover { text-decoration: underline; }
+
+/* ── RECOVERY SPECIFIC ── */
 .recover-info {
-    font-size: 14px;
-    color: rgba(255,255,255,0.9);
-    margin-bottom: 25px;
-    line-height: 1.5;
+  font-size: 13px;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 22px;
+  line-height: 1.6;
 }
 
-/* Caixas para digitação */
-.input-group {
-    text-align: left;
-    margin-bottom: 20px;
+.back-link {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 13px;
 }
-
-.input-group label {
-    display: block;
-    font-size: 13px;
-    margin-bottom: 8px;
-    opacity: 0.9;
+.back-link a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
 }
+.back-link a:hover { text-decoration: underline; }
 
-.input-field {
-    position: relative;
-    display: flex;
-    align-items: center;
+/* ── SUCCESS STATE ── */
+.success-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
-
-.input-field input {
-    width: 100%;
-    padding: 14px 40px 14px 16px;
-    border: none;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.85);
-    color: var(--cor-texto);
-    font-size: 14px;
-    outline: none;
-    transition: 0.3s;
+.success-icon {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: #f0fdf4;
+  border: 2px solid #22c55e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin-bottom: 6px;
 }
-
-.input-field input:focus {
-    background: #FFFFFF;
-    box-shadow: 0 0 0 2px var(--cor-primaria);
+.step-list {
+  text-align: left;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 14px 0 24px;
+  list-style: none;
+  width: 100%;
 }
-
-/* Ícones dentro dos inputs */
-.icon-user, .icon-eye, .icon-mail {
-    position: absolute;
-    right: 14px;
-    color: #666;
-    cursor: pointer;
-    font-size: 16px;
+.step-list li {
+  padding: 8px 14px;
+  background: var(--primary-bg);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  color: var(--text);
 }
+.step-list li strong { color: var(--primary); }
 
-/* Link e inputs */
-.forgot-password {
-    text-align: left;
-    margin-bottom: 28px;
-}
-
-.forgot-password a, .back-to-login a {
-    color: var(--cor-texto-claro);
-    font-size: 13px;
-    text-decoration: none;
-    opacity: 0.8;
-    transition: 0.3s;
-}
-
-.forgot-password a:hover, .back-to-login a:hover {
-    opacity: 1;
-    text-decoration: underline;
-}
-
-/* Ajuste para o link de volta*/
-.back-to-login {
-    margin-top: 30px;
-    text-align: center;
-}
-
-/* Botão principal */
-.btn-entrar {
-    width: 100%;
-    padding: 14px;
-    border: none;
-    border-radius: 20px;
-    background: var(--cor-primaria);
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.btn-entrar:hover {
-    background: var(--cor-primaria-hover);
-    transform: translateY(-2px);
-}
-
-/* Pag de link enviado */
-.subtitle-enviado {
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--cor-secundaria);
-    margin-bottom: 20px;
-}
-
-.instrucoes-texto {
-    font-size: 14px;
-    text-align: left;
-    margin-bottom: 15px;
-    opacity: 0.9;
-}
-
-.lista-passos {
-    text-align: left;
-    font-size: 13px;
-    line-height: 1.6;
-    margin-bottom: 30px;
-    padding-left: 15px;
-    opacity: 0.85;
-}
-
-.lista-passos li {
-    margin-bottom: 10px;
-}
-
-/* painel principal */
-/* Reset fundo do painel para não usar o fundo azul do login */
-body:not(.login-page) {
-    background-color: #F4F7F6;
-}
-
-.dashboard-container {
-    display: grid;
-    grid-template-columns: 250px 1fr 300px; 
-    grid-template-rows: 70px 1fr; 
-    grid-template-areas:
-        "header header header"
-        "sidebar-left main sidebar-right";
-    height: 100vh;
-    overflow: hidden; 
-}
-
-/* Barra superior */
-.topbar {
-    grid-area: header;
-    background-color: var(--cor-primaria); 
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 30px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-    z-index: 10;
-}
-
-.topbar .logo {
-    font-size: 24px;
-    font-weight: 900;
-    letter-spacing: 1px;
-    cursor: pointer;
-}
-
-/* Barra de pesqui. interativa */
-.search-bar input {
-    width: 400px;
-    padding: 12px 20px;
-    border-radius: 20px;
-    border: none;
-    outline: none;
-    font-size: 14px;
-    background-color: rgba(255, 255, 255, 0.2);
-    color: white;
-    transition: all 0.3s ease;
-}
-
-.search-bar input::placeholder {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.search-bar input:focus {
-    background-color: #FFFFFF;
-    color: var(--cor-texto-input);
-    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
-    width: 450px; /* Estica um pouco ao clicar */
-}
-
-/* icone de Config e ajuda */
-.top-icons span {
-    font-size: 22px;
-    margin-left: 20px;
-    cursor: pointer;
-    transition: transform 0.2s ease, color 0.2s;
-    display: inline-block;
-}
-
-.top-icons span:hover {
-    transform: scale(1.2) rotate(5deg); 
-    color: var(--cor-secundaria);
-}
-
-/* menu esquerdo*/
-.sidebar-left {
-    grid-area: sidebar-left;
-    background-color: #FFFFFF;
-    padding: 30px 20px;
-    box-shadow: 2px 0 10px rgba(0,0,0,0.05);
-    display: flex;
-    flex-direction: column;
-}
-
-.main-menu ul {
-    list-style: none;
-}
-
-.main-menu li {
-    padding: 15px 20px;
-    margin-bottom: 8px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 15px;
-    color: #555;
-    transition: all 0.3s ease;
-}
-
-/* Interação foda nos itens do menu */
-.main-menu li:hover {
-    background-color: rgba(26, 115, 232, 0.1); 
-    color: var(--cor-primaria);
-    transform: translateX(8px); 
-}
-
-/* Ajuste temporario para o bloco de notas */
-.ultimas-notas {
-    margin-top: 30px;
-    border-top: 1px solid #EEE;
-    padding-top: 20px;
-}
-
-.ultimas-notas h3 {
-    font-size: 14px;
-    color: #888;
-    margin-bottom: 15px;
-}
-
-/* Botão de sair no final do menu */
-.btn-sair {
-    margin-top: auto; 
-    padding: 14px;
-    background: transparent;
-    border: 2px solid #ff4d4d;
-    color: #ff4d4d;
-    border-radius: 12px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-}
-
-.btn-sair:hover {
-    background-color: #ff4d4d;
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(255, 77, 77, 0.3);
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+  .auth-left { display: none; }
+  .auth-right { padding: 36px 28px; }
 }
