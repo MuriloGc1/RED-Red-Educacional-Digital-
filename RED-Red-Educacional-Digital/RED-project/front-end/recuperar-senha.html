@@ -1,46 +1,113 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recuperar Senha - RED</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recuperar Senha — SKY</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* tela de sucesso oculta por padrão */
+    #step-success { display: none; }
+  </style>
 </head>
-<body class="login-page">
+<body>
 
-    <div class="background-wrapper">
-        <main class="login-card">
-            
-            <div class="logo-container">
-                <div class="logo-icon-box">
-                    <span class="r-letter">R</span>
-                </div>
-                <span class="logo-text-ed">ED</span>
-            </div>
+  <div class="auth-card">
 
-            <form id="recover-form" action="senha-enviada.html">
-                <h2>Recuperar Senha</h2>
-                
-                <p class="recover-info">Insira seu e-mail cadastrado ou nome de usuário e enviaremos um link para você.</p>
-
-                <div class="input-group">
-                    <label for="email-recover">Email ou usuário</label>
-                    <div class="input-field">
-                        <input type="text" id="email-recover" placeholder="Digite seu e-mail de cadastro" required>
-                        <span class="icon">✉️</span>
-                    </div>
-                </div>
-
-                <button type="submit" class="btn-entrar">Enviar link</button>
-            </form>
-            
-            <div class="back-to-login">
-                <a href="login.html">← Voltar para o Login</a>
-            </div>
-            
-        </main>
+    <!-- ── ESQUERDA: ilustração temática ── -->
+    <div class="auth-left">
+      <svg viewBox="0 0 360 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- envelope grande -->
+        <rect x="60" y="80" width="240" height="160" rx="16" fill="#fff" opacity=".92"/>
+        <path d="M60 96 L180 175 L300 96" fill="none" stroke="#0C447C" stroke-width="3" opacity=".5"/>
+        <!-- linhas de texto no envelope -->
+        <rect x="100" y="150" width="80" height="8" rx="4" fill="#e2ecf5"/>
+        <rect x="100" y="166" width="120" height="8" rx="4" fill="#e2ecf5"/>
+        <rect x="100" y="182" width="100" height="8" rx="4" fill="#e2ecf5"/>
+        <!-- aba envelope -->
+        <path d="M60 80 L180 160 L300 80 Q296 70 284 70 L76 70 Q64 70 60 80 Z" fill="#c5d6ea" opacity=".8"/>
+        <!-- cadeado no topo -->
+        <rect x="155" y="20" width="50" height="42" rx="8" fill="#0C447C" opacity=".85"/>
+        <path d="M163 28 Q180 10 197 28" fill="none" stroke="#0C447C" stroke-width="5" stroke-linecap="round" opacity=".85"/>
+        <circle cx="180" cy="41" r="8" fill="#fff" opacity=".3"/>
+        <rect x="178" y="41" width="4" height="10" rx="2" fill="#fff" opacity=".5"/>
+        <!-- estrelas/pontos decorativos -->
+        <circle cx="50"  cy="50"  r="5" fill="#F9AB00" opacity=".8"/>
+        <circle cx="310" cy="40"  r="4" fill="#22c55e" opacity=".8"/>
+        <circle cx="325" cy="200" r="6" fill="#3b82f6" opacity=".7"/>
+        <circle cx="38"  cy="220" r="5" fill="#ef4444" opacity=".7"/>
+        <circle cx="290" cy="260" r="4" fill="#a855f7" opacity=".7"/>
+        <!-- avião de papel saindo do envelope -->
+        <path d="M240 140 L310 90 L280 120 Z" fill="#0C447C" opacity=".5"/>
+        <path d="M280 120 L290 145 L310 90 Z" fill="#1A6BBF" opacity=".4"/>
+      </svg>
     </div>
 
-    <script src="js/script.js"></script>
+    <!-- ── DIREITA: formulário ── -->
+    <div class="auth-right">
+
+      <!-- Logo SKY -->
+      <div class="sky-logo">
+        <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="48" cy="12" r="5" fill="#F9AB00"/>
+          <circle cx="62" cy="6"  r="4" fill="#22c55e"/>
+          <circle cx="76" cy="10" r="5" fill="#3b82f6"/>
+          <circle cx="88" cy="18" r="4" fill="#ef4444"/>
+          <circle cx="56" cy="4"  r="3" fill="#a855f7"/>
+          <path d="M20 50 Q60 32 100 50" fill="none" stroke="#0C447C" stroke-width="4.5" stroke-linecap="round"/>
+          <path d="M20 58 Q60 40 100 58" fill="none" stroke="#0C447C" stroke-width="4"   stroke-linecap="round" opacity=".75"/>
+          <path d="M20 66 Q60 48 100 66" fill="none" stroke="#1A6BBF" stroke-width="3.5" stroke-linecap="round" opacity=".55"/>
+          <line x1="60" y1="32" x2="60" y2="72" stroke="#0C447C" stroke-width="2.5" opacity=".4"/>
+          <path d="M18 68 Q60 50 102 68 L100 74 Q60 56 20 74 Z" fill="#0C447C" opacity=".12"/>
+        </svg>
+        <span class="sky-logo-text">SKY</span>
+      </div>
+
+      <!-- PASSO 1: enviar e-mail -->
+      <div id="step-form">
+        <h1 class="auth-title">Recuperar Senha</h1>
+        <p class="recover-info">
+          Insira o e-mail ou matrícula cadastrado e enviaremos<br>
+          um link para criar uma nova senha.
+        </p>
+        <form class="auth-form" id="recover-form">
+          <div class="input-wrap">
+            <input type="text" id="email-recover" placeholder="E-mail ou matrícula" required autocomplete="email">
+          </div>
+          <button type="submit" class="btn-primary">Enviar link</button>
+        </form>
+        <div class="back-link">
+          <a href="login.html">← Voltar para o Login</a>
+        </div>
+      </div>
+
+      <!-- PASSO 2: confirmação (aparece após envio) -->
+      <div id="step-success">
+        <div class="success-box">
+          <div class="success-icon">📩</div>
+          <h1 class="auth-title">E-mail Enviado!</h1>
+          <p class="auth-sub">Confira sua caixa de entrada</p>
+          <ul class="step-list">
+            <li><strong>1. Procure a mensagem:</strong> O assunto é "Redefinição de Senha — SKY".</li>
+            <li><strong>2. Acesse o link:</strong> Clique no link para criar sua nova senha.</li>
+            <li><strong>3. Não encontrou?</strong> Verifique a pasta de Spam ou Lixo Eletrônico.</li>
+          </ul>
+          <button class="btn-primary" onclick="window.location.href='login.html'">
+            Voltar para o Login
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('recover-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('step-form').style.display = 'none';
+      document.getElementById('step-success').style.display = 'block';
+    });
+  </script>
 </body>
 </html>
