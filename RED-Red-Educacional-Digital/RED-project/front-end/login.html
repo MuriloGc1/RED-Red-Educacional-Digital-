@@ -1,45 +1,169 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - RED</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — SKY</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="login-page">
+<body>
 
-    <div class="background-wrapper">
-        
-        <main class="login-card">
-            
-            <div class="logo-container">
-                <img src="assets/image.png" alt="Logo Rede Educacional Digital" class="logo" width="200"> 
-            </div>
+  <div class="auth-card">
 
-            <form id="login-form" action="painel.html">
-                <h2>Login</h2> <div class="input-group">
-                    <label for="email">Email ou usuário</label>
-                    <div class="input-field">
-                        <input type="text" id="email" placeholder="Digite seu email" required>
-                        <span class="icon-user">👤</span> </div>
-                </div>
+    <!-- ── ESQUERDA: ilustração ── -->
+    <div class="auth-left">
+      <svg viewBox="0 0 400 340" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- fundo tela grande -->
+        <rect x="60" y="30" width="280" height="190" rx="14" fill="#fff" opacity=".9"/>
+        <rect x="60" y="30" width="280" height="26" rx="14" fill="#c5d6ea"/>
+        <circle cx="80" cy="43" r="5" fill="#ef4444" opacity=".7"/>
+        <circle cx="96" cy="43" r="5" fill="#f59e0b" opacity=".7"/>
+        <circle cx="112" cy="43" r="5" fill="#22c55e" opacity=".7"/>
+        <!-- linhas de conteúdo na tela -->
+        <rect x="90" y="74" width="60" height="10" rx="4" fill="#c5d6ea"/>
+        <rect x="90" y="92" width="160" height="8" rx="4" fill="#e2ecf5"/>
+        <rect x="90" y="108" width="140" height="8" rx="4" fill="#e2ecf5"/>
+        <rect x="90" y="124" width="150" height="8" rx="4" fill="#e2ecf5"/>
+        <!-- checkboxes -->
+        <rect x="90" y="142" width="14" height="14" rx="3" fill="#0C447C" opacity=".7"/>
+        <text x="94" y="153" fill="#fff" font-size="9" font-weight="700">✓</text>
+        <rect x="90" y="162" width="14" height="14" rx="3" fill="#0C447C" opacity=".4"/>
+        <rect x="90" y="182" width="14" height="14" rx="3" fill="#0C447C" opacity=".7"/>
+        <text x="94" y="193" fill="#fff" font-size="9" font-weight="700">✓</text>
+        <rect x="110" y="145" width="80" height="7" rx="3" fill="#e2ecf5"/>
+        <rect x="110" y="165" width="100" height="7" rx="3" fill="#e2ecf5"/>
+        <rect x="110" y="185" width="70" height="7" rx="3" fill="#e2ecf5"/>
+        <!-- suporte da tela -->
+        <rect x="188" y="220" width="24" height="20" rx="2" fill="#b0c4d8"/>
+        <rect x="166" y="238" width="68" height="8" rx="4" fill="#b0c4d8"/>
 
-                <div class="input-group">
-                    <label for="senha">Insira a senha</label>
-                    <div class="input-field">
-                        <input type="password" id="senha" placeholder="Digite sua senha" required>
-                        <span class="icon-eye">👁️</span> </div>
-                </div>
+        <!-- livros empilhados esquerda -->
+        <rect x="30" y="230" width="50" height="12" rx="3" fill="#f59e0b"/>
+        <rect x="34" y="218" width="44" height="12" rx="3" fill="#ef4444" opacity=".8"/>
+        <rect x="38" y="206" width="38" height="12" rx="3" fill="#22c55e" opacity=".8"/>
 
-                <div class="forgot-password">
-                  <a href="recuperar-senha.html">Esqueceu a senha?</a> </div>
+        <!-- planta direita -->
+        <ellipse cx="352" cy="248" rx="18" ry="28" fill="#4ade80" opacity=".7"/>
+        <ellipse cx="362" cy="238" rx="14" ry="22" fill="#22c55e" opacity=".8"/>
+        <rect x="356" y="265" width="6" height="30" rx="3" fill="#a16207" opacity=".6"/>
 
-                <button type="submit" class="btn-entrar">Entrar</button>
-            </form>
-            
-        </main>
+        <!-- lâmpada flutuante esquerda -->
+        <circle cx="110" cy="18" r="14" fill="#fef9c3" opacity=".9"/>
+        <ellipse cx="110" cy="28" rx="6" ry="4" fill="#f59e0b" opacity=".5"/>
+        <rect x="107" y="31" width="6" height="5" rx="2" fill="#d97706" opacity=".6"/>
+
+        <!-- lâmpada flutuante direita -->
+        <circle cx="310" cy="20" r="10" fill="#fef9c3" opacity=".8"/>
+        <ellipse cx="310" cy="28" rx="4" ry="3" fill="#f59e0b" opacity=".5"/>
+
+        <!-- PESSOA 1: profissional de óculos (esquerda) -->
+        <!-- corpo -->
+        <rect x="88" y="185" width="34" height="50" rx="6" fill="#1e3a5f"/>
+        <!-- cabeça -->
+        <circle cx="105" cy="176" r="16" fill="#f4c08a"/>
+        <!-- cabelo -->
+        <path d="M89 168 Q105 155 121 168" fill="#2d1b00" opacity=".85"/>
+        <!-- óculos -->
+        <rect x="97" y="172" width="8" height="6" rx="2" fill="none" stroke="#666" stroke-width="1.2"/>
+        <rect x="108" y="172" width="8" height="6" rx="2" fill="none" stroke="#666" stroke-width="1.2"/>
+        <line x1="105" y1="175" x2="108" y2="175" stroke="#666" stroke-width="1"/>
+        <!-- gravata -->
+        <path d="M103 185 L107 185 L105 210 Z" fill="#ef4444" opacity=".8"/>
+        <!-- braço com laptop -->
+        <rect x="80" y="198" width="14" height="8" rx="4" fill="#1e3a5f"/>
+        <rect x="70" y="200" width="22" height="16" rx="4" fill="#374151"/>
+        <rect x="72" y="202" width="18" height="11" rx="2" fill="#60a5fa" opacity=".6"/>
+        <!-- pernas -->
+        <rect x="90" y="230" width="13" height="30" rx="5" fill="#1e3a5f"/>
+        <rect x="106" y="230" width="13" height="30" rx="5" fill="#1e3a5f"/>
+        <rect x="88" y="255" width="16" height="8" rx="3" fill="#1a1a1a"/>
+        <rect x="104" y="255" width="16" height="8" rx="3" fill="#1a1a1a"/>
+
+        <!-- PESSOA 2: sentado com laptop (centro) -->
+        <!-- cadeira/mesa -->
+        <rect x="165" y="230" width="70" height="8" rx="4" fill="#94a3b8"/>
+        <rect x="175" y="238" width="6" height="25" rx="3" fill="#94a3b8"/>
+        <rect x="215" y="238" width="6" height="25" rx="3" fill="#94a3b8"/>
+        <!-- laptop -->
+        <rect x="170" y="210" width="60" height="38" rx="5" fill="#374151"/>
+        <rect x="173" y="213" width="54" height="32" rx="3" fill="#93c5fd" opacity=".7"/>
+        <rect x="168" y="246" width="64" height="6" rx="3" fill="#4b5563"/>
+        <!-- corpo sentado -->
+        <rect x="183" y="220" width="34" height="22" rx="6" fill="#f59e0b"/>
+        <!-- cabeça -->
+        <circle cx="200" cy="208" r="14" fill="#f4c08a"/>
+        <!-- cabelo escuro -->
+        <path d="M186 202 Q200 192 214 202" fill="#1a0a00" opacity=".9"/>
+        <!-- pernas -->
+        <rect x="183" y="240" width="14" height="20" rx="5" fill="#1e3a5f"/>
+        <rect x="200" y="240" width="14" height="20" rx="5" fill="#1e3a5f"/>
+
+        <!-- PESSOA 3: mulher de pé (direita) com tablet -->
+        <!-- corpo -->
+        <rect x="272" y="185" width="34" height="55" rx="6" fill="#f59e0b"/>
+        <!-- cabeça -->
+        <circle cx="289" cy="174" r="16" fill="#f4c08a"/>
+        <!-- cabelo longo -->
+        <path d="M273 168 Q289 155 305 168 L308 205 Q289 215 270 205 Z" fill="#1a0a00" opacity=".85"/>
+        <!-- tablet na mão -->
+        <rect x="305" y="196" width="22" height="30" rx="4" fill="#374151"/>
+        <rect x="307" y="198" width="18" height="24" rx="2" fill="#7dd3fc" opacity=".7"/>
+        <!-- pernas -->
+        <rect x="274" y="236" width="13" height="32" rx="5" fill="#374151"/>
+        <rect x="290" y="236" width="13" height="32" rx="5" fill="#374151"/>
+        <rect x="272" y="262" width="16" height="8" rx="3" fill="#1a1a1a"/>
+        <rect x="288" y="262" width="16" height="8" rx="3" fill="#1a1a1a"/>
+      </svg>
     </div>
 
-    <script src="js/script.js"></script>
+    <!-- ── DIREITA: formulário ── -->
+    <div class="auth-right">
+
+      <!-- Logo SKY -->
+      <div class="sky-logo">
+        <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+          <!-- pontos coloridos -->
+          <circle cx="48" cy="12" r="5" fill="#F9AB00"/>
+          <circle cx="62" cy="6"  r="4" fill="#22c55e"/>
+          <circle cx="76" cy="10" r="5" fill="#3b82f6"/>
+          <circle cx="88" cy="18" r="4" fill="#ef4444"/>
+          <circle cx="56" cy="4"  r="3" fill="#a855f7"/>
+          <!-- livro aberto -->
+          <path d="M20 50 Q60 32 100 50" fill="none" stroke="#0C447C" stroke-width="4.5" stroke-linecap="round"/>
+          <path d="M20 58 Q60 40 100 58" fill="none" stroke="#0C447C" stroke-width="4"   stroke-linecap="round" opacity=".75"/>
+          <path d="M20 66 Q60 48 100 66" fill="none" stroke="#1A6BBF" stroke-width="3.5" stroke-linecap="round" opacity=".55"/>
+          <!-- lombada central -->
+          <line x1="60" y1="32" x2="60" y2="72" stroke="#0C447C" stroke-width="2.5" opacity=".4"/>
+          <!-- base do livro -->
+          <path d="M18 68 Q60 50 102 68 L100 74 Q60 56 20 74 Z" fill="#0C447C" opacity=".12"/>
+        </svg>
+        <span class="sky-logo-text">SKY</span>
+      </div>
+
+      <h1 class="auth-title">Bem-vindo!</h1>
+      <p class="auth-sub">Faça login para continuar</p>
+
+      <form class="auth-form" action="painel.html">
+        <div class="input-wrap">
+          <input type="text" placeholder="E-mail ou matrícula" required autocomplete="username">
+        </div>
+        <div class="input-wrap">
+          <input type="password" placeholder="Senha" required autocomplete="current-password">
+        </div>
+        <div class="forgot">
+          <a href="recuperar-senha.html">Esqueceu a senha?</a>
+        </div>
+        <button type="submit" class="btn-primary">Entrar</button>
+      </form>
+
+      <p class="auth-footer">
+        Novo aqui? <a href="#">Criar conta</a>
+      </p>
+
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
