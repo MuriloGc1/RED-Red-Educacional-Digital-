@@ -1,22 +1,28 @@
 /* ── RESET ── */
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 :root {
-  --primary:       #0C447C;
-  --primary-light: #1A6BBF;
-  --primary-bg:    #EBF2FB;
-  --accent:        #F9AB00;
-  --text:          #1a1a2e;
-  --text-muted:    #7A869A;
-  --border:        #E0E6ED;
-  --red:           #ef4444;
-  --bg-outer:      #b8cde0;
-  --radius:        16px;
-  --shadow:        0 12px 40px rgba(0,0,0,0.14);
+  --primary: #0c447c;
+  --primary-light: #1a6bbf;
+  --primary-bg: #ebf2fb;
+  --accent: #f9ab00;
+  --text: #1a1a2e;
+  --text-muted: #7a869a;
+  --border: #e0e6ed;
+  --red: #ef4444;
+  --bg-outer: #b8cde0;
+  --radius: 16px;
+  --shadow: 0 12px 40px rgba(0, 0, 0, 0.14);
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background: var(--bg-outer);
   min-height: 100vh;
   display: flex;
@@ -49,7 +55,13 @@ body {
   overflow: hidden;
 }
 
-.auth-left svg { width: 100%; max-width: 380px; height: auto; }
+.auth-left img.auth-illustration {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  display: block;
+}
 
 /* ── RIGHT PANEL (form) ── */
 .auth-right {
@@ -68,7 +80,11 @@ body {
   align-items: center;
   margin-bottom: 28px;
 }
-.sky-logo svg { width: 88px; height: auto; margin-bottom: 6px; }
+.sky-logo svg {
+  width: 88px;
+  height: auto;
+  margin-bottom: 6px;
+}
 .sky-logo-text {
   font-size: 26px;
   font-weight: 700;
@@ -92,9 +108,16 @@ body {
 }
 
 /* ── FORM ── */
-.auth-form { width: 100%; display: flex; flex-direction: column; gap: 14px; }
+.auth-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
 
-.input-wrap { position: relative; }
+.input-wrap {
+  position: relative;
+}
 .auth-form input {
   width: 100%;
   padding: 13px 16px;
@@ -104,13 +127,17 @@ body {
   font-size: 14px;
   color: var(--text);
   outline: none;
-  transition: border-color .25s, box-shadow .25s;
+  transition:
+    border-color 0.25s,
+    box-shadow 0.25s;
   background: #fff;
 }
-.auth-form input::placeholder { color: #aab; }
+.auth-form input::placeholder {
+  color: #aab;
+}
 .auth-form input:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(12,68,124,.1);
+  box-shadow: 0 0 0 3px rgba(12, 68, 124, 0.1);
 }
 
 .forgot {
@@ -119,8 +146,14 @@ body {
   color: var(--text-muted);
   margin-top: -6px;
 }
-.forgot a { color: var(--text-muted); text-decoration: none; transition: color .2s; }
-.forgot a:hover { color: var(--primary); }
+.forgot a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.forgot a:hover {
+  color: var(--primary);
+}
 
 .btn-primary {
   width: 100%;
@@ -133,11 +166,18 @@ body {
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: background .25s, transform .15s;
+  transition:
+    background 0.25s,
+    transform 0.15s;
   margin-top: 6px;
 }
-.btn-primary:hover { background: var(--primary-light); transform: translateY(-1px); }
-.btn-primary:active { transform: translateY(0); }
+.btn-primary:hover {
+  background: var(--primary-light);
+  transform: translateY(-1px);
+}
+.btn-primary:active {
+  transform: translateY(0);
+}
 
 .auth-footer {
   text-align: center;
@@ -145,8 +185,14 @@ body {
   color: var(--text-muted);
   margin-top: 14px;
 }
-.auth-footer a { color: var(--primary); font-weight: 600; text-decoration: none; }
-.auth-footer a:hover { text-decoration: underline; }
+.auth-footer a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+.auth-footer a:hover {
+  text-decoration: underline;
+}
 
 /* ── RECOVERY SPECIFIC ── */
 .recover-info {
@@ -170,7 +216,14 @@ body {
   align-items: center;
   gap: 5px;
 }
-.back-link a:hover { text-decoration: underline; }
+.back-link a:hover {
+  text-decoration: underline;
+}
+
+/* ── STEP 2 (recuperar senha): começa oculto, JS revela após envio ── */
+#step-success {
+  display: none;
+}
 
 /* ── SUCCESS STATE ── */
 .success-box {
@@ -207,10 +260,16 @@ body {
   margin-bottom: 8px;
   color: var(--text);
 }
-.step-list li strong { color: var(--primary); }
+.step-list li strong {
+  color: var(--primary);
+}
 
 /* ── RESPONSIVE ── */
 @media (max-width: 640px) {
-  .auth-left { display: none; }
-  .auth-right { padding: 36px 28px; }
+  .auth-left {
+    display: none;
+  }
+  .auth-right {
+    padding: 36px 28px;
+  }
 }
